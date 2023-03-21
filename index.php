@@ -1,19 +1,5 @@
-<?php
-
-$password_length = $_GET['number'];
-
-function password_generate($password_length){
-    $text = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@!&';
-    $password = '';
-for ($i = 0; $i < $password_length; $i++) {
-    $random_password = random_int(0 , (strlen($text) - 1));
-    $password .= $text[$random_password];
-    }
-    return $password;
-}
-
-$password = password_generate($password_length);            
-
+<?php 
+    include('function.php');
 ?>
 
 <!DOCTYPE html>
@@ -46,11 +32,11 @@ $password = password_generate($password_length);
             </div>
         </div>    
     </div>
-    <div class="container">
+    <div class="container pt-5">
         <div class="row">
             <div class="col-12 text-center">           
                 <h5>Ecco la tua nuova password di <?php echo $password_length ?> caratteri: </h5>
-                <h2><?php echo $password ?></h2>
+                <h1><?php echo $password ?></h1>
                 <p>ora si che sei al sicuro!</p> 
             </div>
         </div>
